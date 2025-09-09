@@ -4,7 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:fe": "live-server src --port=5173 --open=/",
+    "dev:server": "nodemon server/app.js",
+    "dev": "concurrently -n FE,API -c green,cyan \"npm:dev:fe\" \"npm:dev:server\"",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean && node -e \"require('fs').mkdirSync('dist/css',{recursive:true}); require('fs').mkdirSync('dist/js',{recursive:true}); require('fs').mkdirSync('dist/assets',{recursive:true});\"",
+    "build:copy": "copyfiles -u 1 \"src/assets/**/*\" dist/assets || node -e \"process.exit(0)\"",
+    "build:css": "esbuild src/css/styles.css --minify --outfile=dist/css/styles.css",
+    "build:js": "esbuild src/js/app.js --minify --outfile=dist/js/app.js",
+    "build:html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css --minify-js src/index.html -o dist/index.html",
+    "build": "npm run prebuild && npm run build:copy && npm run build:css && npm run build:js && npm run build:html",
+    "start": "node server/app.js",
+    "lint": "eslint \"src/js/**/*.js\"",
+    "format": "prettier --write \"src/**/*.{js,css,html,md}\""
   },
   "keywords": [],
   "author": "",
@@ -17,6 +29,10 @@
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
-    "nodemon": "^3.1.10"
+    "copyfiles": "^2.4.1",
+    "esbuild": "^0.25.9",
+    "html-minifier-terser": "^7.2.0",
+    "nodemon": "^3.1.10",
+    "rimraf": "^6.0.1"
   }
 }
