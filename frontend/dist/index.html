@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AndeLog • Logística urbana sostenible</title>
+
+  <!-- Materialize CSS & Icons (Material Design) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- Estilos del proyecto -->
+  <link href="./css/styles.css" rel="stylesheet" />
+  <meta name="description" content="AndeLog: logística urbana sostenible. Servicios, casos, blog y contacto." />
+</head>
+<body>
+  <!-- Skip link: accesibilidad -->
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- Header / Top App Bar -->
+  <header>
+    <nav class="blue darken-2" role="navigation" aria-label="principal">
+      <div class="nav-wrapper container">
+        <a href="/" class="brand-logo" aria-label="AndeLog inicio">AndeLog</a>
+        <a href="#!" data-target="menu-movil" class="sidenav-trigger" aria-label="Abrir menú">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/" aria-current="page">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#clientes">Clientes</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#cta-final" class="btn amber darken-3 waves-effect waves-light"><i class="material-icons left">chat</i>Contáctanos</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Drawer móvil -->
+    <ul class="sidenav" id="menu-movil" aria-label="menú móvil">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#clientes">Clientes</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#cta-final" class="waves-effect"><i class="material-icons left">chat</i>Contáctanos</a></li>
+    </ul>
+  </header>
+
+  <!-- Main -->
+  <main id="contenido" role="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m10 l8">
+            <h1 class="white-text hero-title">Logística urbana<br class="hide-on-small-only" /> sostenible y ágil</h1>
+            <p class="hero-subtitle">Optimizamos tus entregas con eficiencia y menor huella ambiental. Tecnología, datos y operación impecable.</p>
+            <div class="hero-ctas">
+              <a href="#cta-final" class="btn-large amber darken-3 waves-effect waves-light">
+                <i class="material-icons left">bolt</i> Cotizar ahora
+              </a>
+              <a href="#servicios" class="btn-large white black-text waves-effect">
+                <i class="material-icons left">explore</i> Ver servicios
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Indicador de accesibilidad visual -->
+      <a class="hero-skip" href="#servicios" aria-label="Ir a Servicios">
+        <i class="material-icons">expand_more</i>
+      </a>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section container">
+      <h2 class="section-title">Servicios</h2>
+      <p class="flow-text section-intro">Soluciones modulares para tu cadena urbana: última milla, ruteo inteligente y micro-fulfillment.</p>
+
+      <!-- Grid de servicios -->
+      <div class="row" aria-live="polite" id="servicios-grid">
+        <!-- 6 cards (estáticas, puedes migrarlas a render desde JS si quieres) -->
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title"><i class="material-icons tiny">local_shipping</i> Última milla</span>
+              <p>Reducción de tiempos y costos en tramos urbanos con visibilidad en tiempo real.</p>
+              <ul class="service-bullets">
+                <li><i class="material-icons tiny">check</i> Tracking en vivo</li>
+                <li><i class="material-icons tiny">check</i> Ventanas horarias</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="#cta-final" class="btn-flat waves-effect" aria-label="Solicitar última milla">Solicitar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title"><i class="material-icons tiny">route</i> Ruteo inteligente</span>
+              <p>Algoritmos que optimizan trayectos y consolidan entregas con menor huella.</p>
+              <ul class="service-bullets">
+                <li><i class="material-icons tiny">check</i> Menos kilómetros</li>
+                <li><i class="material-icons tiny">check</i> SLAs cumplidos</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="#cta-final" class="btn-flat waves-effect">Solicitar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title"><i class="material-icons tiny">store</i> Micro-fulfillment</span>
+              <p>Puntos urbanos de preparación para acelerar e-commerce y retail.</p>
+              <ul class="service-bullets">
+                <li><i class="material-icons tiny">check</i> Mallas urbanas</li>
+                <li><i class="material-icons tiny">check</i> Integración WMS</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="#cta-final" class="btn-flat waves-effect">Solicitar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title"><i class="material-icons tiny">analytics</i> Analítica operativa</span>
+              <p>KPIs accionables para continua mejora de tu logística.</p>
+              <ul class="service-bullets">
+                <li><i class="material-icons tiny">check</i> Tableros</li>
+                <li><i class="material-icons tiny">check</i> Alertas</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="#cta-final" class="btn-flat waves-effect">Solicitar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title"><i class="material-icons tiny">verified_user</i> Cumplimiento</span>
+              <p>Buenas prácticas y controles para operación segura y confiable.</p>
+              <ul class="service-bullets">
+                <li><i class="material-icons tiny">check</i> Protocolos</li>
+                <li><i class="material-icons tiny">check</i> Trazabilidad</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="#cta-final" class="btn-flat waves-effect">Solicitar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title"><i class="material-icons tiny">eco</i> Sostenibilidad</span>
+              <p>Menos emisiones con flota eco y consolidación de rutas.</p>
+              <ul class="service-bullets">
+                <li><i class="material-icons tiny">check</i> Flota baja emisión</li>
+                <li><i class="material-icons tiny">check</i> Reportes ESG</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a href="#cta-final" class="btn-flat waves-effect">Solicitar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTES / CIFRAS -->
+    <section id="clientes" class="section grey lighten-5">
+      <div class="container">
+        <h2 class="section-title">Clientes y cifras</h2>
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="stat-card z-depth-1">
+              <i class="material-icons">assignment_turned_in</i>
+              <p class="stat-value" aria-label="Tasa de cumplimiento 98 por ciento">98%</p>
+              <p class="stat-label">Cumplimiento SLA</p>
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="stat-card z-depth-1">
+              <i class="material-icons">speed</i>
+              <p class="stat-value" aria-label="Reducción promedio 22 por ciento">22%</p>
+              <p class="stat-label">Reducción de tiempos</p>
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="stat-card z-depth-1">
+              <i class="material-icons">public</i>
+              <p class="stat-value" aria-label="Cobertura en 12 ciudades">12</p>
+              <p class="stat-label">Ciudades</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="section container">
+      <h2 class="section-title">Testimonios</h2>
+      <div class="row">
+        <div class="col s12 m6">
+          <blockquote>
+            “La última milla mejoró notablemente. Entregas a tiempo y clientes felices.”
+            <cite class="d-block">— Laura G., Retail</cite>
+          </blockquote>
+        </div>
+        <div class="col s12 m6">
+          <blockquote>
+            “El ruteo inteligente redujo costos y kilómetros recorridos en la ciudad.”
+            <cite class="d-block">— Carlos M., e-commerce</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="cta-final" class="section cta">
+      <div class="container">
+        <div class="row valign-wrapper">
+          <div class="col s12 m8">
+            <h2 class="cta-title">¿Listo para optimizar tu logística?</h2>
+            <p class="cta-subtitle">Conversemos y arma un plan a tu medida.</p>
+          </div>
+          <div class="col s12 m4 center-align">
+            <a href="#!" class="btn-large white blue-text text-darken-2 waves-effect" id="btnContactar">
+              <i class="material-icons left">mail</i> Escribir ahora
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer blue darken-2">
+    <div class="container">
+      <p class="white-text">© <span id="year"></span> AndeLog S.A.S. • Demo basada en prototipos</p>
+    </div>
+  </footer>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+  <!-- JS de la pantalla -->
+  <script type="module" src="./js/home.js"></script>
+</body>
+</html>
