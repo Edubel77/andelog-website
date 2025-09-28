@@ -6,7 +6,9 @@ import morgan from 'morgan';
 import { db } from './config/db.config.js';
 import { config } from './config.js';
 import usersRouter from './routes/users.routes.js';
-
+import servicesRouter from './routes/services.routes.js'
+import productsRouter from './routes/products.routes.js'
+import authRouter from './routes/auth.routes.js'
 const app = express();
 
 // Conexión a la base de datos
@@ -31,6 +33,9 @@ app.use(
 // Endpoints API
 app.get('/api/health', (req, res) => res.json({ ok: true, env: config.NODE_ENV }));
 app.use('/api', usersRouter);
+app.use('/api', servicesRouter);
+app.use('/api', productsRouter);
+app.use('/api', authRouter);  
 
 // Manejador de errores
 // eslint-disable-next-line no-unused-vars
