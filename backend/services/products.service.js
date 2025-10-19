@@ -21,10 +21,19 @@ export const getProductById = (id) => {
 
 export const createProduct = (data) => {
     return new Promise((resolve, reject) => {
-        const product = new Product(data);
-        db.query('INSERT INTO products SET ?', product, (err, result) => {
+        // Preparar datos con fechas en formato MySQL
+        const now = new Date();
+        const productData = {
+            name: data.name,
+            description: data.description,
+            price: data.price,
+            created_at: now,
+            updated_at: now
+        };
+        
+        db.query('INSERT INTO products SET ?', productData, (err, result) => {
             if (err) return reject(err);
-            product.id = result.insertId;
+            const product = new Product({ id: result.insertId, ...productData });
             resolve(product);
         });
     });
@@ -32,9 +41,17 @@ export const createProduct = (data) => {
 
 export const updateProduct = (id, data) => {
     return new Promise((resolve, reject) => {
-        db.query('UPDATE products SET ? WHERE id = ?', [data, id], (err) => {
+        // Preparar datos con fecha de actualización
+        const updateData = {
+            name: data.name,
+            description: data.description,
+            price: data.price,
+            updated_at: new Date()
+        };
+        
+        db.query('UPDATE products SET ? WHERE id = ?', [updateData, id], (err) => {
             if (err) return reject(err);
-            resolve({ id, ...data });
+            resolve({ id, ...updateData });
         });
     });
 };

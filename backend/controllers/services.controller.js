@@ -27,7 +27,20 @@ export const getService = async (req, res) => {
 
 export const postService = async (req, res) => {
     try {
-        const service = await createService(req.body);
+        // Validar campos requeridos
+        const { name, description } = req.body;
+        
+        if (!name) {
+            return res.status(400).json({ error: 'Name is required' });
+        }
+        
+        // Solo pasar los campos necesarios (sin fechas)
+        const serviceData = {
+            name: name.trim(),
+            description: description?.trim() || ''
+        };
+        
+        const service = await createService(serviceData);
         res.status(201).json(service);
     } catch (err) {
         res.status(500).json({ error: err.message });
@@ -36,7 +49,20 @@ export const postService = async (req, res) => {
 
 export const putService = async (req, res) => {
     try {
-        const updated = await updateService(req.params.id, req.body);
+        // Validar campos requeridos
+        const { name, description } = req.body;
+        
+        if (!name) {
+            return res.status(400).json({ error: 'Name is required' });
+        }
+        
+        // Solo pasar los campos necesarios (sin fechas)
+        const serviceData = {
+            name: name.trim(),
+            description: description?.trim() || ''
+        };
+        
+        const updated = await updateService(req.params.id, serviceData);
         res.json(updated);
     } catch (err) {
         res.status(500).json({ error: err.message });

@@ -1,12 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
- 
+    <title>AndeLog - Gestión Logística</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
 <body>
-   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>  
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">AndeLog</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="login.html" class="btn waves-effect waves-light">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero white-text">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <h1 class="hero-title">Soluciones Logísticas Integrales</h1>
+                    <p class="hero-subtitle">Optimizamos tu cadena de suministro con tecnología de vanguardia</p>
+                    <div class="hero-ctas">
+                        <a href="#contacto" class="btn-large waves-effect waves-light white black-text">Comenzar Ahora</a>
+                        <a href="#servicios" class="btn-large waves-effect waves-light transparent white-text">Ver Servicios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <h2 class="section-title">Nuestros Servicios</h2>
+                    <p class="section-intro">Ofrecemos soluciones completas para todas tus necesidades logísticas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <p>&copy; <span id="year"></span> AndeLog. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>

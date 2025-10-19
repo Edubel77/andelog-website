@@ -22,19 +22,38 @@ app.use(
 app.get('/api/health', (req, res) => res.json({ ok: true, env: config.NODE_ENV }));
 app.use('/api', usersRouter);
 
-// Servir estáticos desde dist (para producción o pruebas de build)
+// Servir estáticos desde src (para desarrollo)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const distDir = path.join(__dirname, '..', 'dist');
+const srcDir = path.join(__dirname, '..', 'src');
 
-app.use(express.static(distDir));
+app.use(express.static(srcDir));
+
+// Rutas específicas para las páginas
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(srcDir, 'login.html'));
+});
+
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(srcDir, 'register.html'));
+});
+
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(srcDir, 'dashboard.html'));
+});
+
+app.get('/products', (req, res) => {
+  res.sendFile(path.join(srcDir, 'products.html'));
+});
+
+app.get('/services', (req, res) => {
+  res.sendFile(path.join(srcDir, 'services.html'));
+});
 
 // Fallback SPA: devuelve index.html para rutas no-API
 app.use((req, res, next) => {
-  // Deja pasar cualquier llamada a /api (ya fue atendida arriba o deberá 404)
   if (req.path.startsWith('/api')) return next();
-  // Devuelve index.html para que el SPA maneje la ruta en el front
-  res.sendFile(path.join(distDir, 'index.html'), (err) => (err ? next(err) : null));
+  res.sendFile(path.join(srcDir, 'index.html'), (err) => (err ? next(err) : null));
 });
 
 // Manejador de errores

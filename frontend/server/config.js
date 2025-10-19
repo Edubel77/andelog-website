@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const config = {
-  PORT: process.env.PORT ?? 3000,
+  PORT: process.env.PORT ?? 3100,
   NODE_ENV: process.env.NODE_ENV ?? 'development',
   CORS_ORIGIN: process.env.CORS_ORIGIN ?? 'http://localhost:5173',
   MOCK_BASE_URL: process.env.MOCK_BASE_URL ?? 'https://jsonplaceholder.typicode.com',

@@ -1,0 +1,25 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "globals": {
+    "M": "readonly",
+    "authAPI": "readonly",
+    "productsAPI": "readonly",
+    "servicesAPI": "readonly",
+    "isAuthenticated": "readonly",
+    "logout": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "prefer-const": "error",
+    "no-var": "error"
+  }
+}

@@ -10,10 +10,10 @@ import { authenticateJWT } from '../middlewares/auth.middleware.js';
 
 const router = express.Router();
 
-router.get('/', authenticateJWT, getServices);
-router.get('/:id', authenticateJWT, getService);
-router.post('/', authenticateJWT, postService);
-router.put('/:id', authenticateJWT, putService);
-router.delete('/:id', authenticateJWT, removeService);
+router.get('/services', authenticateJWT, getServices);
+router.get('/services/:id', authenticateJWT, getService);
+router.post('/services', authenticateJWT, postService);
+router.put('/services/:id', authenticateJWT, putService);
+router.delete('/services/:id', authenticateJWT, removeService);
 
 export default router;
